@@ -199,7 +199,7 @@ And we observed that there are no missing values on both datasets.
 
 ### Check data type
 
-We observe CA_2017 and US_yt_trending_2017's trending_date is stored as characters. For example, 2017-11-14 is stored as character 17.14.11
+We observe CA_2017's trending_date is stored as characters. For example, 2017-11-14 is stored as character 17.14.11
 we will need to convert it to POSIXct DateTime format. 
 
 Since R is hard to perform string operations, it takes quite a time while applying as.POSIXct or as.Date on a data frame with huge amount of rows. We use python to solve this problem, the script is insert_words.py after processed time format using python script, we save the file as CAvideos2.csv and load it directly while running R script.
@@ -403,7 +403,7 @@ Since we are mostly interested in the number of views for data exploration:
 
 1. As more younger generations are accessing Youtube, we will use a box plot to compare the number of views between the years 2017 and 2022 for all trending videos to observe whether there is an increasing trend.
 2. As the short video has arisen since 2016, we will use a histogram to compare the video length between the years 2017 and 2022 for all trending videos to observe whether there is a decreasing trend.
-3. We are curious about what factors could affect the number of views, the number of likes and number of comments will have a positive linear relationship with the number of views, so we can fit a linear regression between a number of likes and the number of views as well as the number of comments and number of views. But we are not sure whether the video's length has an effect on the number of views to explore the relationship between the video length and the number of views.
+3. We are curious about what factors could affect the number of views, the number of likes and number of comments will have a positive linear relationship with the number of views, so we can fit a linear regression between a number of likes and the number of views as well as the number of comments and number of views. But we are not sure whether the video's length has an effect on the number of views to explore the relationship between the video length and the number of views we will use advanced linear regression with a cubic regression spline on video's length.
 4. We are also curious about whether the trending video category has changed from 2017 to 2022. We will use a bar plot to plot the number of trending videos belonging to each category for 2017 and 2022, respectively.
 
 # Results
@@ -436,7 +436,7 @@ ggplot(df_CA_trending, aes(x=year, y=views)) +
   scale_y_continuous(limits = quantile(df_CA_trending$views, c(0.1, 0.9)))+ggtitle("Box plot comparing trending video views by year using data without outlier")
 ```
 
-After removing outliers, the increasing trend is significant. And we can see there are more viewers per Canadian trending video in 2022 compared to 2017. After removing outliers, the increasing trend is significant.
+After removing outliers, the increasing trend is significant. And we can see there are more viewers per Canadian trending video in 2022 compared to 2017.
 
 
 ## Histogram to compare the video duration between year 2017 and 2022
