@@ -28,7 +28,7 @@ library("rjson")
 CA_2017 <- read_csv("./CAvideos2.csv", show_col_types = FALSE)
 CA_2022 <- read_csv("./CA_youtube_trending_data_2022.csv", show_col_types = FALSE)
 
-api_key = "AIzaSyC_fmJfMd--MbrJ9XvaNrHIeHc2oVkuKmI"
+api_key = "Your API key here"
 ```
 
 
