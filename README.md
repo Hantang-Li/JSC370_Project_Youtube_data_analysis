@@ -9,3 +9,5 @@ YouTube, the world’s third most popular online destination, has transformed fr
 3. Download CA_category_id.json from https://www.kaggle.com/datasnaek/youtube-new
 4. Run insert_words.py and it will produce CAvideos2.csv
 5. Run mid_Part1_final.Rmd inside R studio to produce the same result.
+
+Note that I also included my API call result All_ca_trend_vid_content.csv, so you do not have to obtain a key and run the API for a long time to obtain the additional data. 
